@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-header>
+    <div class="user-container">
+      <h1>User form</h1>
+      <form class="user-form" [formGroup]="form.formGroup">
+        <mat-form-field>
+          <label>
+            <input type="text" matInput placeholder="FirstName" formControlName="firstName">
+          </label>
+        </mat-form-field>
+        <mat-form-field>
+          <label>
+            <input type="text" matInput placeholder="LastName" formControlName="lastName">
+          </label>
+        </mat-form-field>
+        <mat-form-field>
+          <label>
+            <input type="text" matInput placeholder="Email" formControlName="email">
+          </label>
+        </mat-form-field>
+        <mat-form-field>
+          <label>
+            <input type="password" matInput placeholder="Password" formControlName="password">
+          </label>
+        </mat-form-field>
+<!--        {{form.formGroup.valid}}-->
+<!--        {{form.formGroup.controls.password.valid}}-->
+<!--        {{form.formGroup.controls.firstName.touched}}-->
+<!--        {{form.formGroup.controls.firstName.dirty}}-->
+        <p *ngIf="form.formGroup.controls.password.invalid && form.formGroup.controls.password.touched">Invalid password</p>
+        <button mat-raised-button color="primary">ENTER</button>
+      </form>
+    </div>
+  </mat-card-header>
+</mat-card>
