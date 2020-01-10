@@ -20,4 +20,16 @@ export class UserComponent implements OnInit {
   ngOnInit() {
   }
 
+  public inputPassword(event: any): void {
+    // this.form.formGroup.setValue({
+    //   password: event.target.value,
+    //   firstName: '',
+    //   lastName: '',
+    //   email: ''
+    // });
+
+    this.form.formGroup.patchValue({
+      password: event.target.value
+    });
+  }
 }

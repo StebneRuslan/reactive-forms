@@ -20,11 +20,11 @@
         </mat-form-field>
         <mat-form-field>
           <label>
-            <input type="password" matInput placeholder="Password" formControlName="password">
+            <input (input)="inputPassword($event)" type="password" matInput placeholder="Password" [value]="form.formGroup.controls.password.value">
           </label>
         </mat-form-field>
 <!--        {{form.formGroup.valid}}-->
-<!--        {{form.formGroup.controls.password.valid}}-->
+        {{form.formGroup.controls.password.value}}
 <!--        {{form.formGroup.controls.firstName.touched}}-->
 <!--        {{form.formGroup.controls.firstName.dirty}}-->
         <p *ngIf="form.formGroup.controls.password.invalid && form.formGroup.controls.password.touched">Invalid password</p>
